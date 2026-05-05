@@ -22,7 +22,7 @@ Then ask Claude to "load the index and use the listed images".
 ## Live gallery
 
 Browse all images visually at:
-https://hilex2030.github.io/amre-assets/
+https://hilex2030.github.io/
 
 ## Adding new images
 

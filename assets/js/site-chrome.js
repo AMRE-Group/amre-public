@@ -9,7 +9,7 @@
 (function () {
   'use strict';
 
-  var BASE = '/amre-assets/website';
+  var BASE = '/website';
   var LOGO = '/assets/logos';
 
   // ── Nav links — edit here, propagates everywhere ──
