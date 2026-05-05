@@ -1,0 +1,642 @@
+/* AMRE Website — Site-wide Overrides
+   Loaded after each page's first inline <style> to standardize:
+   • Brand token remapping (legacy Apple → AMRE/Compass)
+   • Navigation styling (match home page across all pages)
+   • Playfair Display on banner headings
+   • Forest-green page-hero with brass italic em accents
+   • Compass-square (2px) buttons
+   • Legible body gray text on light & dark sections
+   • White disclosure bar below the navy footer (universal)
+*/
+
+/* =====================================================================
+   1) BRAND TOKEN REMAP
+   The subpages were built on an Apple design language with tokens like
+   --sf, --gold, --light, --blue (#0071e3), --white (#fbfbfd), --ink
+   (#1d1d1f), --mid (#6e6e73). The home page uses a Compass-luxury brand
+   system. Redefining these legacy tokens here forces every existing
+   var(--…) reference on the subpages to resolve to the brand value.
+   This loads AFTER each page's inline :root, so it wins the cascade.
+   ===================================================================== */
+:root{
+  /* Legacy Apple system font → Montserrat */
+  --sf: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Legacy bronze "gold" → brass */
+  --gold:    #ffc13c;
+  --gold-lt: #ffc13c;
+
+  /* Legacy iOS blue → Compass blue */
+  --blue:    #0064e5;
+  --blue-dk: #0049A8;
+
+  /* Legacy off-white → pure white (matches home body bg) */
+  --white:   #ffffff;
+
+  /* Legacy Apple ink → home ink */
+  --ink:     #1a1a1a;
+
+  /* Legacy Apple gray → home mid */
+  --mid:     #5A5A5A;
+
+  /* Legacy Apple gray bg → cream offwhite (matches home sections) */
+  --light:   #f7edf0;
+
+  /* Brand tokens (defensive — re-declare in case they're missing) */
+  --forest:  #1c3d31;
+  --navy:    #070B33;
+  --brass:   #ffc13c;
+  --brass-dk:#e6a800;
+  --cream:   #efdbc0;
+  --offwhite:#f7edf0;
+
+  /* Nav height — home is 56px, subpages were 52px */
+  --nav-h:   56px;
+
+  /* Type stack tokens */
+  --serif:   'Playfair Display', Georgia, serif;
+  --sans:    'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* =====================================================================
+   2) BODY — Montserrat 300 on every page
+   Subpages declare body{font-family:var(--sf)}. With --sf remapped to
+   Montserrat above, this would already work, but make it explicit and
+   add the home-page weight (300) and pure-white background.
+   ===================================================================== */
+body{
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-weight: 300 !important;
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+}
+
+/* =====================================================================
+   3) NAVIGATION — match home page exactly
+   ===================================================================== */
+.site-nav{
+  height: 56px !important;
+  padding: 0 32px !important;
+  background: rgba(7,11,51,0.88) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+}
+.site-nav.is-light{
+  background: rgba(255,255,255,0.92) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+}
+.nav-links{ gap: 28px !important; }
+.nav-links a{
+  font-family: 'Montserrat', -apple-system, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: .1em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,.82) !important;
+}
+.site-nav.is-light .nav-links a{ color: rgba(7,11,51,.65) !important; }
+.nav-links a:hover{ color: #fff !important; }
+.site-nav.is-light .nav-links a:hover{ color: #1c3d31 !important; }
+.nav-links a.active{ color: #ffc13c !important; }
+.site-nav.is-light .nav-links a.active{ color: #1c3d31 !important; }
+
+/* CTA — solid brass button on every page (was a plain text link on subpages) */
+.nav-cta{
+  font-family: 'Montserrat', -apple-system, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: .1em !important;
+  text-transform: uppercase !important;
+  padding: 9px 20px !important;
+  border-radius: 2px !important;
+  background: #ffc13c !important;
+  color: #070B33 !important;
+  transition: background .2s, transform .15s !important;
+}
+.nav-cta:hover{
+  background: #e6a800 !important;
+  color: #070B33 !important;
+  transform: translateY(-1px);
+}
+.site-nav.is-light .nav-cta{ background: #ffc13c !important; color: #070B33 !important; }
+
+/* Logo sizing — match home (AMRE 22px, Compass 15px) */
+.nav-amre   { height: 22px !important; width: auto !important; }
+.nav-compass{ height: 15px !important; width: auto !important; opacity: .85 !important; }
+
+@media (max-width: 680px){
+  .site-nav{ padding: 0 20px !important; }
+}
+
+/* =====================================================================
+   4) PAGE HERO — forest green, brass italic em (home parity)
+   Subpages had .page-hero { background:var(--ink) } with bronze accents.
+   ===================================================================== */
+.page-hero{
+  background: #1c3d31 !important;     /* forest, not ink */
+  padding-top: calc(56px + 80px) !important;
+  padding-bottom: 80px !important;
+}
+.page-hero::before{
+  /* Subpages have a subtle bronze grid overlay — recolor to brass */
+  background-image:
+    linear-gradient(rgba(255,193,60,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,193,60,.05) 1px, transparent 1px) !important;
+}
+.page-hero h1{
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -.01em !important;
+}
+.page-hero h1 em{
+  color: #ffc13c !important;          /* brass, not gold-lt */
+  font-style: italic !important;
+}
+.page-hero-sub{
+  color: rgba(255,255,255,0.78) !important;
+}
+
+/* =====================================================================
+   5) HEADINGS — Playfair Display on every banner (home parity)
+   Catches the buyers "v2 overrides" sans-serif rule via higher
+   specificity (html body … beats body …).
+   ===================================================================== */
+html body .hero-h,
+html body .page-hero h1,
+html body .section-h,
+html body .stmt-h,
+html body .svc-title,
+html body .agent-name,
+html body .agent-display-name,
+html body .compass-card-h,
+html body .prop-cta-h,
+html body .prop-price,
+html body .form-box-title,
+html body .statement-q,
+html body .testi-text,
+html body .value-title,
+html body .step-title,
+html body .pillar-title,
+html body .phase-title,
+html body .calc-result-num,
+html body .accordion-title,
+html body .stat-num,
+html body .stat-n,
+html body .plisting-price,
+html body .bt-title,
+html body .split-agent-name,
+html body .banner-h{
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -.01em !important;
+}
+html body .hero-h em,
+html body .page-hero h1 em,
+html body .section-h em,
+html body .prop-cta-h em,
+html body .compass-card-h em,
+html body .agent-name em{
+  font-style: italic !important;
+}
+/* em accents: forest on light backgrounds, brass on dark backgrounds.
+   Scoped so dark-bg sections never get the forest (invisible) treatment. */
+section .section-h em,
+.section-h:not(.section-h-white) em{
+  color: #1c3d31;               /* forest — light bg default (no !important; overridable) */
+}
+.section-h-white em,
+.section-dark .section-h em,
+.page-hero .section-h em,
+[style*="background:var(--forest)"] .section-h em,
+[style*="background:var(--navy)"] .section-h em,
+[style*="background:var(--ink)"] .section-h em,
+[style*="background:#1c3d31"] .section-h em,
+[style*="background:#070B33"] .section-h em{
+  color: #ffc13c !important;    /* brass — any dark-bg section */
+}
+
+/* =====================================================================
+   6) EYEBROWS — brass with line accent (home parity)
+   ===================================================================== */
+.eyebrow,
+.page-eyebrow,
+.section-label{
+  color: #1c3d31 !important;          /* forest by default (light bg) */
+}
+.eyebrow:not(.eyebrow-left)::before,
+.eyebrow:not(.eyebrow-left)::after,
+.page-eyebrow::before,
+.eyebrow.eyebrow-left::before{
+  background: #1c3d31 !important;
+}
+
+/* On dark sections, eyebrows are brass */
+.page-hero .page-eyebrow,
+.section-dark .eyebrow,
+.compass-adv .eyebrow,
+.prop-teaser-badge,
+.hero-eyebrow,
+[style*="background:var(--forest)"] .eyebrow,
+[style*="background:var(--navy)"] .eyebrow,
+[style*="background:var(--ink)"] .eyebrow{
+  color: #ffc13c !important;
+}
+.page-hero .page-eyebrow::before,
+.page-hero .page-eyebrow::after,
+.section-dark .eyebrow::before,
+.section-dark .eyebrow::after,
+.compass-adv .eyebrow::before,
+.compass-adv .eyebrow::after,
+.prop-teaser-badge::before,
+.hero-eyebrow::before,
+[style*="background:var(--forest)"] .eyebrow::before,
+[style*="background:var(--forest)"] .eyebrow::after,
+[style*="background:var(--navy)"] .eyebrow::before,
+[style*="background:var(--navy)"] .eyebrow::after,
+[style*="background:var(--ink)"] .eyebrow::before,
+[style*="background:var(--ink)"] .eyebrow::after{
+  background: #ffc13c !important;
+}
+
+/* =====================================================================
+   7) BUTTONS — Compass-square 2px corners, brass primary
+   Subpages used Apple-pill border-radius:980px. Home uses 2px.
+   ===================================================================== */
+.btn,
+.btn-blue,
+.btn-gold,
+.btn-brass,
+.btn-forest,
+.btn-outline-white,
+.btn-outline-dark{
+  border-radius: 2px !important;
+  font-family: 'Montserrat', -apple-system, sans-serif !important;
+  font-weight: 500 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+  font-size: 12px !important;
+}
+
+/* Primary "blue" button on subpages → recolor to brass to match home */
+.btn-blue{
+  background: #ffc13c !important;
+  color: #070B33 !important;
+  padding: 14px 28px !important;
+}
+.btn-blue:hover{ background: #e6a800 !important; transform: translateY(-1px); }
+
+/* Legacy "gold" button → brass */
+.btn-gold{
+  background: #ffc13c !important;
+  color: #070B33 !important;
+  padding: 14px 28px !important;
+}
+.btn-gold:hover{ background: #e6a800 !important; transform: translateY(-1px); }
+/* Outline buttons */
+.btn-outline-white{
+  border: 1px solid rgba(255,255,255,.45) !important;
+  color: #fff !important;
+  padding: 13px 28px !important;
+}
+.btn-outline-white:hover{
+  background: rgba(255,255,255,.12) !important;
+  border-color: rgba(255,255,255,.8) !important;
+}
+.btn-outline-dark{
+  border: 1px solid rgba(28,61,49,.35) !important;
+  color: #1c3d31 !important;
+  padding: 13px 28px !important;
+}
+.btn-outline-dark:hover{ background: rgba(28,61,49,.06) !important; }
+
+/* "Text" button keeps blue (Compass blue via remap) */
+.btn-text{
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #0064e5 !important;
+  letter-spacing: .02em !important;
+  border-radius: 0 !important;
+  text-transform: none !important;
+}
+
+/* Filter pills (properties page) — keep pill shape but recolor */
+.filter-pill{
+  font-family: 'Montserrat', -apple-system, sans-serif !important;
+}
+.filter-pill:hover,
+.filter-pill.active{
+  background: #1c3d31 !important;
+  border-color: #1c3d31 !important;
+  color: #fff !important;
+}
+
+/* =====================================================================
+   8) LIGHT-SECTION BODY COPY — readable gray on white/cream
+   ===================================================================== */
+.lede, .svc-desc, .agent-bio, .step-desc,
+.team-member-bio, .testi-quote, .faq-a, .contact-val,
+.prop-teaser-content p, .prop-spec-lbl, .check-list li,
+.cb-row, .cb-row span, .cb-row p, .footer-tagline,
+.split-content p, .col p, p.lede{
+  color: #3a3a3c !important;
+}
+
+/* =====================================================================
+   9) DARK-SECTION BODY COPY — lift faint whites
+   ===================================================================== */
+.hero-sub, .page-hero-sub,
+.compass-adv .lede, .compass-adv .lede-white,
+.compass-card-p, .valuation-cta p, .stat-lbl,
+.footer-col p, .footer-links a, .footer-legal, .footer-dre{
+  color: rgba(255,255,255,0.85) !important;
+}
+.lede-white{ color: rgba(255,255,255,0.9) !important; }
+
+/* Featured listing block sits on navy — every value & label reads white */
+.prop-teaser-content,
+.prop-teaser-content h3,
+.prop-teaser-content p,
+.prop-teaser-content .prop-teaser-addr{
+  color: #fff !important;
+}
+.prop-teaser-content p,
+.prop-teaser-addr{ color: rgba(255,255,255,0.78) !important; }
+.prop-spec-num{ color: #fff !important; opacity: 1 !important; }
+.prop-spec-lbl{ color: rgba(255,255,255,0.65) !important; }
+
+/* Stats numbers — solid forest on light bg */
+html body .stat-num,
+html body .stat-n{
+  color: #1c3d31 !important;
+  opacity: 1 !important;
+}
+
+/* Statement-q & testi-text — italic serif on light bg = dark ink */
+html body .testi-text{
+  color: #1d1d1f !important;
+  font-style: italic !important;
+  opacity: 1 !important;
+}
+.testi-author{ color: #3a3a3c !important; }
+.statement-q{
+  color: rgba(255,255,255,0.88) !important;
+  font-style: italic !important;
+}
+
+/* =====================================================================
+   10) ALIGNMENT DEFAULTS — center unless opted out
+   ===================================================================== */
+.eyebrow:not(.eyebrow-left){ justify-content: center !important; }
+.section-h:not(.section-h-left){ text-align: center !important; }
+.lede:not(.lede-left){ text-align: center !important; margin-inline: auto !important; }
+
+/* =====================================================================
+   11) TEAM PAGE — Apple-style stacked cards (kept from prior overrides)
+   ===================================================================== */
+.team-cards-wrap{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 32px;
+  display: grid !important;
+  grid-template-columns: repeat(2,1fr) !important;
+  gap: 32px !important;
+  background: transparent;
+}
+@media (max-width: 860px){
+  .team-cards-wrap{ grid-template-columns: 1fr !important; padding: 48px 20px; gap: 24px !important; }
+}
+.team-cards-wrap > section{ background: transparent !important; padding: 0 !important; min-height: 0 !important; }
+.team-cards-wrap .agent-profile{
+  display: flex !important; flex-direction: column !important;
+  background: #fff !important;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(7,11,51,.04), 0 12px 32px rgba(7,11,51,.06);
+  border: 1px solid rgba(7,11,51,.04);
+  height: auto !important; min-height: 0 !important;
+}
+.team-cards-wrap .agent-photo-col{
+  order: 0 !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 380px !important;
+  min-height: 0 !important;
+  flex: none !important;
+  background-size: cover !important;
+  background-position: center top !important;
+}
+.team-cards-wrap .agent-photo-grad{ display: none !important; }
+.team-cards-wrap .agent-content-col{
+  order: 1 !important;
+  padding: 32px 36px 36px !important;
+  display: flex !important; flex-direction: column !important;
+  gap: 14px !important;
+  background: #fff !important;
+}
+.team-cards-wrap .agent-role{
+  font-family: 'Montserrat', -apple-system, sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+  color: #1c3d31 !important;
+  margin: 0 !important;
+}
+.team-cards-wrap .agent-name{
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 32px !important;
+  line-height: 1.05 !important;
+  color: #070B33 !important;
+  margin: 0 !important;
+  letter-spacing: -.01em !important;
+}
+.team-cards-wrap .agent-profile .divider{
+  width: 36px !important; height: 2px !important;
+  background: #ffc13c !important;
+  margin: 4px 0 8px !important;
+}
+.team-cards-wrap .agent-bio{
+  font-family: 'Montserrat', -apple-system, sans-serif !important;
+  font-size: 14px !important; line-height: 1.65 !important;
+  color: #3a3a3c !important; margin: 0 !important;
+}
+.team-cards-wrap .agent-bio strong{ color: #1c3d31 !important; font-weight: 600 !important; }
+.team-cards-wrap .agent-creds{
+  display: grid !important;
+  grid-template-columns: 90px 1fr !important;
+  gap: 8px 16px !important;
+  padding: 14px 16px !important;
+  background: #f7edf0 !important;
+  border-radius: 10px !important;
+  font-size: 12px !important;
+  color: #3a3a3c !important;
+  margin-top: 6px !important;
+}
+.team-cards-wrap .agent-creds span{
+  color: #1c3d31 !important;
+  font-weight: 600 !important;
+  letter-spacing: .04em !important;
+}
+.team-cards-wrap .agent-contacts{
+  display: flex !important; gap: 12px !important;
+  margin-top: 8px !important; flex-wrap: wrap !important;
+}
+.team-cards-wrap .agent-contacts a{
+  font-family: 'Montserrat', -apple-system, sans-serif !important;
+  font-size: 12px !important; font-weight: 600 !important;
+  letter-spacing: .08em !important; text-transform: uppercase !important;
+  padding: 11px 18px !important;
+  border-radius: 2px !important;
+  text-decoration: none !important;
+}
+.team-cards-wrap .agent-contacts a:first-child{ background: #1c3d31 !important; color: #fff !important; }
+.team-cards-wrap .agent-contacts a:nth-child(2){ border: 1px solid rgba(7,11,51,.18) !important; color: #070B33 !important; }
+
+/* =====================================================================
+   12) FOOTER DISCLOSURE BAR — universal white strip below navy footer
+   ===================================================================== */
+.site-footer-disclosure-bar{
+  background: #fff;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding: 28px 24px;
+}
+.site-footer-disclosure{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+  border: 0;
+  padding: 0;
+}
+.site-footer-disclosure-text{
+  font-family: 'Montserrat', -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #3a3a3c;
+  margin: 0;
+}
+.site-footer-disclosure-text a{
+  color: #1c3d31;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.site-footer-disclosure-text a:hover{ color: #070B33; }
+.site-footer-disclosure-eho{ flex-shrink: 0; }
+.site-footer-disclosure-eho img{
+  height: 60px; width: auto; opacity: 1; display: block;
+}
+@media (max-width: 680px){
+  .site-footer-disclosure{ grid-template-columns: 1fr; gap: 20px; }
+  .site-footer-disclosure-eho{ justify-self: start; }
+  .site-footer-disclosure-eho img{ height: 48px; }
+}
+
+/* Footer tagline — bright white instead of dim grey */
+.footer-tagline{ color: rgba(255,255,255,0.85) !important; }
+
+/* =====================================================================
+   13) DARK-SECTION TEXT LEGIBILITY — universal rule
+   Every element on a dark background MUST have light text.
+   Minimum: rgba(255,255,255,0.72) for supporting copy.
+   Targets page-specific dark components that use raw RGBA values below
+   that threshold. These classes appear across buyers, sellers, contact,
+   team pages on dark (--ink / navy / forest) section backgrounds.
+   ===================================================================== */
+
+/* Contact page split-left (dark half) */
+.split-agent-role{ color: rgba(255,255,255,0.75) !important; }
+.split-agent-link{ color: rgba(255,255,255,0.72) !important; }
+.split-office{ color: rgba(255,255,255,0.72) !important; }
+.split-office-label{ color: rgba(255,255,255,0.55) !important; }
+.split-left h1 em{ color: #ffc13c !important; }
+
+/* Buyers page dark "Who We Work With" cards */
+.bt-desc{ color: rgba(255,255,255,0.75) !important; }
+.bt-list li{ color: rgba(255,255,255,0.72) !important; }
+.bt-list li::before{ color: #ffc13c !important; }
+
+/* Compass advantage cards (navy section on all pages) */
+.compass-card-p{ color: rgba(255,255,255,0.78) !important; }
+
+/* Team page values-grid cards (dark section) */
+.value-body{ color: rgba(255,255,255,0.75) !important; }
+
+/* Buyers calc result (dark box) */
+.calc-result-label{ color: rgba(255,255,255,0.65) !important; }
+
+/* Valuation CTA section (forest green bg) */
+.valuation-cta p,
+[style*="background:var(--forest)"] p,
+[style*="background:var(--forest)"] .lede{
+  color: rgba(255,255,255,0.82) !important;
+}
+[style*="background:var(--forest)"] .eyebrow{
+  color: rgba(255,255,255,0.60) !important;
+}
+
+/* Stat labels on dark stat bars */
+.stat-l{ color: #5A5A5A !important; }
+/* Dark-section body copy — these classes live exclusively on dark backgrounds.
+   They were previously in the light-section list which made them charcoal-on-black. */
+.phase-desc{ color: rgba(255,255,255,0.82) !important; }
+.bt-desc   { color: rgba(255,255,255,0.78) !important; }
+.value-body{ color: rgba(255,255,255,0.75) !important; }
+
+/* =====================================================================
+   NAV ADDITIONS — plain-text link style for Client Dashboard
+   (Home Valuation reuses the existing .nav-cta brass button so it is
+   visually identical to "Get In Touch" — same padding, font, color.)
+   ===================================================================== */
+.nav-link-text{
+  font-family: 'Montserrat', -apple-system, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: .1em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,.82) !important;
+  white-space: nowrap;
+  transition: color .2s !important;
+}
+.nav-link-text:hover{ color: #fff !important; }
+.site-nav.is-light .nav-link-text{ color: rgba(7,11,51,.65) !important; }
+.site-nav.is-light .nav-link-text:hover{ color: #1c3d31 !important; }
+
+/* Make sure .nav-right gives the two CTAs + plain link an even gap */
+.nav-right{ display:flex !important; align-items:center !important; gap: 14px !important; }
+
+@media(max-width:860px){
+  .nav-link-text{display:none !important}
+  .nav-right .nav-cta{display:none !important}
+}
+
+
+/* =====================================================================
+   14) VALUATION CTA — light-bg fix
+   The .valuation-cta section has background:#fff, not forest green.
+   Earlier rules in this file mistakenly colored its <p> elements white,
+   making the eyebrow and lede invisible. The .f reveal animation also
+   isn't firing on this section, so opacity stays at 0. Force both.
+===================================================================== */
+.valuation-cta .eyebrow,
+.valuation-cta p,
+.valuation-cta .lede{
+     color: #3a3a3c !important;
+}
+.valuation-cta .eyebrow{
+     color: #1c3d31 !important;
+}
+.valuation-cta .eyebrow::before,
+.valuation-cta .eyebrow::after{
+     background: #1c3d31 !important;
+}
+.valuation-cta .section-h{
+     color: #1a1a1a !important;
+}
+/* Safety net: ensure reveal-animation elements are visible even if the
+   IntersectionObserver JS fails to add the .in class on this section. */
+.valuation-cta .f{
+     opacity: 1 !important;
+     transform: none !important;
+}
