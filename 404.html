@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page Not Found &middot; AMRE Real Estate Group</title>
+<meta name="robots" content="noindex,nofollow">
+<!-- amre-favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1c3d31">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  // Redirect old property URL patterns to /properties/
+  (function() {
+    var path = window.location.pathname;
+    var redirects = {
+      '/properties/1226-chelsea-ave-santa-monica-ca-us-90404-26645517': '/properties/',
+      '/properties/1342-harvard-st-unit-201-santa-monica-ca-90404-23-245327': '/properties/',
+      '/properties/1524-berkeley-st-santa-monica-ca-us-90404-25566785': '/properties/',
+      '/properties/4048-farmouth-dr-los-angeles-ca-us-90027-24-412017': '/properties/'
+    };
+    // Normalize path (remove trailing slash)
+    var normalPath = path.replace(/\/$/, '');
+    if (redirects[normalPath] || redirects[normalPath + '/']) {
+      window.location.replace(redirects[normalPath] || redirects[normalPath + '/']);
+    }
+    // Also redirect any old /properties/[address-slug] patterns to /properties/
+    if (/^\/properties\/[a-z0-9-]+-[0-9]{5,}/.test(path)) {
+      window.location.replace('/properties/');
+    }
+  })();
+</script>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --forest:#1c3d31;
+    --gold:#b5894e;
+    --ink:#1a1a1a;
+    --white:#ffffff;
+    --serif:'Playfair Display',Georgia,serif;
+    --sans:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;
+  }
+  html,body{height:100%}
+  body{
+    font-family:var(--sans);
+    font-weight:300;
+    background:var(--white);
+    color:var(--ink);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    text-align:center;
+    padding:40px 24px;
+  }
+  .container{max-width:560px;width:100%}
+  .brand{
+    font-family:var(--sans);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--forest);
+    margin-bottom:40px;
+    opacity:.7;
+  }
+  .num{
+    font-family:var(--serif);
+    font-size:clamp(80px,18vw,140px);
+    font-weight:400;
+    color:var(--forest);
+    line-height:1;
+    margin-bottom:24px;
+    opacity:.15;
+  }
+  h1{
+    font-family:var(--serif);
+    font-size:clamp(22px,5vw,32px);
+    font-weight:400;
+    color:var(--forest);
+    margin-bottom:16px;
+    line-height:1.2;
+  }
+  p{
+    font-size:15px;
+    line-height:1.7;
+    color:#5a5a5a;
+    margin-bottom:8px;
+  }
+  .actions{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:36px;
+    margin-bottom:36px;
+  }
+  .btn{
+    display:inline-block;
+    padding:12px 28px;
+    font-family:var(--sans);
+    font-size:12px;
+    font-weight:500;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    text-decoration:none;
+    border-radius:980px;
+    transition:opacity .2s,transform .2s;
+    cursor:pointer;
+    border:none;
+  }
+  .btn:hover{opacity:.85;transform:translateY(-1px)}
+  .btn-forest{background:var(--forest);color:#fff}
+  .btn-outline{background:transparent;color:var(--forest);border:1px solid var(--forest)}
+  .nav{
+    display:flex;
+    gap:24px;
+    justify-content:center;
+    flex-wrap:wrap;
+    padding-top:24px;
+    border-top:1px solid rgba(0,0,0,.08);
+  }
+  .nav a{
+    font-size:12px;
+    font-weight:400;
+    letter-spacing:.06em;
+    color:var(--forest);
+    text-decoration:none;
+    opacity:.65;
+    transition:opacity .2s;
+  }
+  .nav a:hover{opacity:1}
+</style>
+</head>
+<body>
+<div class="container">
+  <p class="brand">AMRE Real Estate Group</p>
+  <div class="num">404</div>
+  <h1>Page not found</h1>
+  <p>The page you're looking for doesn't exist or has moved.</p>
+  <p>If you arrived from an older link, we may have updated our site structure.</p>
+  <div class="actions">
+    <a href="/" class="btn btn-forest">Return to home</a>
+    <a href="/properties/" class="btn btn-outline">Browse properties</a>
+  </div>
+  <nav class="nav">
+    <a href="/buyers/">Buyers</a>
+    <a href="/sellers/">Sellers</a>
+    <a href="/team/">Team</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</div>
+</body>
+</html>
