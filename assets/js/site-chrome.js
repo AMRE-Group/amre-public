@@ -18,7 +18,8 @@
     { href: BASE + '/buyers/',  label: 'Buyers',   match: /\/buyers\//  },
     { href: BASE + '/team/',    label: 'Team',     match: /\/team\//    },
     { href: BASE + '/contact/', label: 'Contact',  match: /\/contact\// },
-     { href: BASE + '/properties/mulholland-14423/', label: 'OUR PROCESS', match: /\/properties\/mulholland-14423\// }
+     { href: BASE + '/blog/',             label: 'Journal',     match: /\/blog\//      },
+     { href: BASE + '/sellers/#three-phase', label: 'Our Process', match: /\/sellers\//   }
   ];
 
   // ── Right-side actions — edit here, propagates everywhere ──
