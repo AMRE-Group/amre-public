@@ -10,13 +10,13 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Properties | AMRE Real Estate Group">
 <meta property="og:description" content="Active listings, past sales, and recent leases across Los Angeles County.">
-<meta property="og:image" content="https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/26659403/9198069734939624807.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/amre-group-stairs-formal.jpg">
 <meta property="og:url" content="https://amre.group/properties/">
 <meta property="og:site_name" content="AMRE Real Estate Group">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Properties | AMRE Real Estate Group">
 <meta name="twitter:description" content="Active listings, past sales, and recent leases across Los Angeles County.">
-<meta name="twitter:image" content="https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/26659403/9198069734939624807.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/amre-group-stairs-formal.jpg">
 <meta name="geo.region" content="US-CA">
 <meta name="geo.placename" content="Beverly Hills, Los Angeles">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,12 +41,10 @@ a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 
-/* Fade-in */
 .f{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .f.in{opacity:1;transform:translateY(0)}
 .f.d1{transition-delay:.08s}.f.d2{transition-delay:.16s}.f.d3{transition-delay:.24s}
 
-/* Buttons */
 .btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-weight:500;border-radius:2px;padding:13px 26px;font-size:13px;letter-spacing:.04em;transition:background .2s,transform .15s}
 .btn-gold{background:var(--brass);color:var(--navy)}
 .btn-gold:hover{background:var(--brass-dk);transform:translateY(-1px)}
@@ -55,27 +53,30 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .btn-outline-light{border:1px solid rgba(255,255,255,.4);color:#fff}
 .btn-outline-light:hover{background:rgba(255,255,255,.1)}
 
-/* Page hero */
+/* Page hero with banner */
 .page-hero{
-  min-height:520px;padding:calc(var(--nav-h) + 88px) 44px 80px;
-  background:var(--navy);position:relative;overflow:hidden;color:#fff;
+  min-height:560px;padding:calc(var(--nav-h) + 96px) 44px 88px;
+  position:relative;overflow:hidden;color:#fff;
+  background:
+    linear-gradient(135deg, rgba(7,11,51,.82) 0%, rgba(7,11,51,.92) 60%, rgba(28,61,49,.78) 100%),
+    url('https://raw.githubusercontent.com/Hilex2030/amre-assets/main/assets/photos/amre-group-stairs-formal.jpg') center 35%/cover no-repeat,
+    var(--navy);
 }
 .page-hero::before{
-  content:'';position:absolute;inset:0;
-  background-image:linear-gradient(rgba(255,193,60,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,193,60,.05) 1px,transparent 1px);
-  background-size:80px 80px;
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,193,60,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,193,60,.04) 1px,transparent 1px);
+  background-size:80px 80px;opacity:.6;
 }
 .ph-inner{position:relative;z-index:2;max-width:900px;margin:0 auto}
 .ph-eyebrow{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:22px;display:flex;align-items:center;gap:14px}
 .ph-eyebrow::before{content:'';width:32px;height:1px;background:var(--brass)}
 .page-hero h1{font-family:var(--serif);font-size:clamp(44px,6.5vw,82px);font-weight:400;line-height:1.05;letter-spacing:-.01em;margin-bottom:24px}
 .page-hero h1 em{font-style:italic;color:var(--brass)}
-.ph-sub{font-size:clamp(15px,1.7vw,18px);font-weight:300;line-height:1.7;color:rgba(255,255,255,.72);max-width:620px;margin-bottom:36px}
-.ph-stats{display:flex;gap:48px;flex-wrap:wrap;margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.12)}
+.ph-sub{font-size:clamp(15px,1.7vw,18px);font-weight:300;line-height:1.7;color:rgba(255,255,255,.78);max-width:620px;margin-bottom:36px}
+.ph-stats{display:flex;gap:48px;flex-wrap:wrap;margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.18)}
 .ph-stat-n{font-family:var(--serif);font-size:clamp(32px,4vw,46px);font-weight:400;color:var(--brass);line-height:1}
-.ph-stat-l{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:8px}
+.ph-stat-l{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:8px}
 
-/* Section labels */
 .section-label{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:14px;display:flex;align-items:center;gap:12px}
 .section-label::before{content:'';width:28px;height:1px;background:var(--brass)}
 .section-h{font-family:var(--serif);font-size:clamp(30px,4.2vw,52px);font-weight:400;line-height:1.07;letter-spacing:-.01em;color:var(--ink);margin-bottom:14px}
@@ -84,7 +85,6 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .section-sub{font-size:16px;font-weight:300;line-height:1.7;color:var(--mid);max-width:600px}
 .section-sub-white{color:rgba(255,255,255,.65)}
 
-/* Active section — magazine hero card */
 .active-section{padding:96px 44px 80px;background:var(--white)}
 .active-inner{max-width:1280px;margin:0 auto}
 .active-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:48px;flex-wrap:wrap}
@@ -105,7 +105,6 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .ah-cta{font-size:13px;font-weight:500;letter-spacing:.06em;color:var(--brass);transition:gap .2s}
 .ah-cta:hover{gap:10px}
 
-/* Featured sale — split spread */
 .featured-section{padding:80px 44px;background:var(--light)}
 .featured-inner{max-width:1280px;margin:0 auto}
 .featured-sale{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff;border:1px solid var(--rule);border-radius:2px;overflow:hidden}
@@ -121,7 +120,6 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .fs-dot{color:var(--rule)}
 .fs-quote{font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.6;color:var(--mid);padding-left:18px;border-left:3px solid var(--brass);margin-bottom:32px}
 
-/* Past Sales grid */
 .sales-section{padding:96px 44px 80px;background:var(--white)}
 .sales-inner{max-width:1280px;margin:0 auto}
 .sales-head{margin-bottom:48px;max-width:600px}
@@ -139,7 +137,6 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .sale-specs{display:flex;gap:14px}
 .sale-specs span{font-size:11px;font-weight:400;color:var(--subtle);letter-spacing:.04em}
 
-/* Leases — list/row style */
 .leases-section{padding:96px 44px 80px;background:var(--navy);color:#fff}
 .leases-inner{max-width:1100px;margin:0 auto}
 .leases-head{margin-bottom:48px;max-width:600px}
@@ -156,7 +153,6 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .lr-price{text-align:right;font-family:var(--serif);font-size:22px;font-weight:500;color:var(--brass);min-width:140px}
 .lr-leased{display:block;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:4px}
 
-/* CTA band */
 .cta-band{padding:96px 44px;background:var(--forest);color:#fff;text-align:center}
 .cta-inner{max-width:760px;margin:0 auto}
 .cta-band h2{font-family:var(--serif);font-size:clamp(32px,4vw,48px);font-weight:400;line-height:1.1;margin-bottom:18px}
@@ -164,11 +160,9 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .cta-band p{font-size:16px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.7);margin-bottom:34px;max-width:560px;margin-left:auto;margin-right:auto}
 .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
-/* Disclaimer */
 .disclaimer{padding:40px 44px;background:var(--light);text-align:center}
 .disclaimer p{font-size:11px;font-weight:300;color:var(--subtle);max-width:880px;margin:0 auto;line-height:1.65}
 
-/* Responsive */
 @media(max-width:980px){
   .active-hero,.featured-sale{grid-template-columns:1fr}
   .active-hero-img,.fs-img{min-height:360px}
@@ -185,46 +179,6 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
   .ph-stats{gap:28px}
   .active-head{flex-direction:column;align-items:flex-start}
 }
-
-/* Featured/Curated section — at the top, before transaction history */
-.featured-listings-section{padding:96px 44px 80px;background:var(--white)}
-.fl-inner{max-width:1280px;margin:0 auto}
-.fl-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:48px;flex-wrap:wrap}
-.fl-head-text{max-width:560px}
-.featured-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 28px}
-.featured-card{background:#fff;border:1px solid var(--rule);border-radius:2px;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
-.featured-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.12)}
-.featured-card a{display:block;color:inherit}
-.fc-img{height:280px;background-size:cover;background-position:center;background-color:var(--light);position:relative;overflow:hidden}
-.fc-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.18),transparent 40%);transition:opacity .3s}
-.featured-card:hover .fc-img{transform:scale(1.04)}
-.fc-badge{position:absolute;top:14px;left:14px;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:2px;z-index:2}
-.fc-badge.badge-sale{background:#0064e5;color:#fff}
-.fc-badge.badge-pending{background:var(--brass);color:var(--navy)}
-.fc-badge.badge-sold{background:rgba(0,0,0,.75);color:#fff}
-.fc-body{padding:24px 24px 28px}
-.fc-price{font-family:var(--serif);font-size:26px;font-weight:500;color:var(--ink);margin-bottom:6px;letter-spacing:-.01em}
-.fc-addr{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:2px}
-.fc-city{font-size:12px;font-weight:300;color:var(--mid);margin-bottom:16px}
-.fc-specs{display:flex;gap:16px}
-.fc-specs span{font-size:11px;font-weight:400;color:var(--subtle);letter-spacing:.04em}
-
-/* Section divider band */
-.history-intro{padding:64px 44px;background:var(--light);text-align:center;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.history-intro-eyebrow{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:14px}
-.history-intro h2{font-family:var(--serif);font-size:clamp(28px,3.6vw,42px);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:14px;max-width:740px;margin-left:auto;margin-right:auto}
-.history-intro h2 em{font-style:italic;color:var(--brass)}
-.history-intro p{font-size:15px;font-weight:300;line-height:1.7;color:var(--mid);max-width:620px;margin:0 auto}
-
-@media(max-width:980px){
-  .featured-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:680px){
-  .featured-listings-section,.history-intro{padding-left:20px;padding-right:20px}
-  .featured-grid{grid-template-columns:1fr}
-  .fl-head{flex-direction:column;align-items:flex-start}
-}
-
 </style>
 </head>
 <body>
@@ -232,15 +186,13 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 <div id="site-drawer-mount"></div>
 <script src="/assets/js/site-chrome.js"></script>
 
-<!-- HERO -->
 <section class="page-hero">
   <div class="ph-inner">
-    <p class="ph-eyebrow">Featured · Active · Past Sales · Past Leases</p>
-    <h1>The properties we <em>represent.</em></h1>
-    <p class="ph-sub">From featured marquee listings to a decade of closed transactions — a living portfolio of homes, condos, and investment properties across Los Angeles County, from Pacific Palisades to Pasadena, Beverly Hills to Joshua Tree.</p>
+    <p class="ph-eyebrow">Active · Past Sales · Past Leases</p>
+    <h1>The properties we've <em>represented.</em></h1>
+    <p class="ph-sub">A living portfolio of homes, condos, and investment properties we've sold and leased on behalf of AMRE clients across Los Angeles County — from Pacific Palisades to Pasadena, Beverly Hills to Joshua Tree.</p>
     <div class="ph-stats">
-      <div><div class="ph-stat-n">8</div><div class="ph-stat-l">Featured</div></div>
-      <div><div class="ph-stat-n">1</div><div class="ph-stat-l">Active</div></div>
+      <div><div class="ph-stat-n">1</div><div class="ph-stat-l">Active Listing</div></div>
       <div><div class="ph-stat-n">22</div><div class="ph-stat-l">Closed Sales</div></div>
       <div><div class="ph-stat-n">15</div><div class="ph-stat-l">Closed Leases</div></div>
       <div><div class="ph-stat-n">$26.6M+</div><div class="ph-stat-l">Sales Volume</div></div>
@@ -248,135 +200,6 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
   </div>
 </section>
 
-<!-- FEATURED / CURATED -->
-<section class="featured-listings-section" id="featured">
-  <div class="fl-inner">
-    <div class="fl-head">
-      <div class="fl-head-text">
-        <p class="section-label">Featured Portfolio</p>
-        <h2 class="section-h">Marquee <em>listings.</em></h2>
-        <p class="section-sub">A curated selection of trophy homes, contemporary architecture, and premier addresses currently in our portfolio or recently closed.</p>
-      </div>
-      <a href="/contact/" class="btn btn-outline-dark">Request Private Showing</a>
-    </div>
-    <div class="featured-grid">
-      
-    <article class="featured-card f " itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="fc-img" style="background-image:url('https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/26659403/9198069734939624807.jpg')">
-          <span class="fc-badge badge-pending">Pending</span>
-        </div>
-        <div class="fc-body">
-          <div class="fc-price">$5,000,000</div>
-          <div class="fc-addr">4240 Avenida De La Encinal</div>
-          <div class="fc-city">Malibu, CA 90265</div>
-          <div class="fc-specs"><span>6 BD</span><span>5 BA</span><span>5,800 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="featured-card f d1" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="fc-img" style="background-image:url('https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/26670155/3498201198900289763.jpg')">
-          <span class="fc-badge badge-sale">For Sale</span>
-        </div>
-        <div class="fc-body">
-          <div class="fc-price">$4,998,000</div>
-          <div class="fc-addr">1620 Electric Ave</div>
-          <div class="fc-city">Venice, CA 90291</div>
-          <div class="fc-specs"><span>5 BD</span><span>6 BA</span><span>3,790 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="featured-card f d2" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="fc-img" style="background-image:url('https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/25-481113/-7576905626461730898.jpg')">
-          <span class="fc-badge badge-sale">For Sale</span>
-        </div>
-        <div class="fc-body">
-          <div class="fc-price">$4,998,000</div>
-          <div class="fc-addr">812 N Vista St</div>
-          <div class="fc-city">Los Angeles, CA 90046</div>
-          <div class="fc-specs"><span>5 BD</span><span>6 BA</span><span>5,351 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="featured-card f d3" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="fc-img" style="background-image:url('https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/25604409/-5983608283421614608.jpg')">
-          <span class="fc-badge badge-pending">Under Contract</span>
-        </div>
-        <div class="fc-body">
-          <div class="fc-price">$4,995,000</div>
-          <div class="fc-addr">2635 Carman Crest Dr</div>
-          <div class="fc-city">Los Angeles, CA 90068</div>
-          <div class="fc-specs"><span>4 BD</span><span>6 BA</span><span>3,381 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="featured-card f " itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="fc-img" style="background-image:url('https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/26651421/6783575949282440405.jpg')">
-          <span class="fc-badge badge-sale">For Sale</span>
-        </div>
-        <div class="fc-body">
-          <div class="fc-price">$4,995,000</div>
-          <div class="fc-addr">295 Mabery Rd</div>
-          <div class="fc-city">Santa Monica, CA 90402</div>
-          <div class="fc-specs"><span>5 BD</span><span>3 BA</span><span>2,273 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="featured-card f d1" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="fc-img" style="background-image:url('https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/25585727/-5498964793090052872.jpg')">
-          <span class="fc-badge badge-sold">Sold</span>
-        </div>
-        <div class="fc-body">
-          <div class="fc-price">$5,000,000</div>
-          <div class="fc-addr">11556 Bellagio Rd</div>
-          <div class="fc-city">Los Angeles, CA 90049</div>
-          <div class="fc-specs"><span>4 BD</span><span>4 BA</span><span>3,035 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="featured-card f d2" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="fc-img" style="background-image:url('https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/25-488935/-8694670094009842049.jpg')">
-          <span class="fc-badge badge-sold">Sold</span>
-        </div>
-        <div class="fc-body">
-          <div class="fc-price">$4,995,000</div>
-          <div class="fc-addr">9000 W 3rd St, Unit 502</div>
-          <div class="fc-city">Los Angeles, CA 90048</div>
-          <div class="fc-specs"><span>3 BD</span><span>3 BA</span><span>2,470 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="featured-card f d3" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="fc-img" style="background-image:url('https://dlajgvw9htjpb.cloudfront.net/cms/c49e08da-79ab-4c29-9953-ca7560928ec3/24-414469/2218794429727573212.jpg')">
-          <span class="fc-badge badge-sold">Sold</span>
-        </div>
-        <div class="fc-body">
-          <div class="fc-price">$4,969,000</div>
-          <div class="fc-addr">4254 Wilkinson Ave</div>
-          <div class="fc-city">Studio City, CA 91604</div>
-          <div class="fc-specs"><span>4 BD</span><span>5 BA</span><span>4,272 SF</span></div>
-        </div>
-      </a>
-    </article>
-    </div>
-  </div>
-</section>
-
-<!-- HISTORY INTRO -->
-<section class="history-intro">
-  <p class="history-intro-eyebrow">Transaction History</p>
-  <h2>A decade of <em>closings.</em></h2>
-  <p>The complete record of homes we've helped sell, buy, and lease — aggregated from public MLS and Compass records. Sorted by price within each category.</p>
-</section>
-
-<!-- ACTIVE -->
 <section class="active-section" id="active">
   <div class="active-inner">
     <div class="active-head">
@@ -387,53 +210,14 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
       </div>
       <a href="/contact/" class="btn btn-outline-dark">Schedule a private tour</a>
     </div>
-    
-    <article class="active-hero f" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/properties/fruitland-401/" class="active-hero-link">
-        <div class="active-hero-img" style="background-image:url('https://www.compass.com/m/5eb8ebcc9941d8fae8de516f5984c4b9c0e81fac_img_0_c5e5b/750x500.jpg')">
-          <span class="ah-badge">Active Under Contract</span>
-        </div>
-        <div class="active-hero-body">
-          <p class="ah-eyebrow">Now Representing</p>
-          <h3 class="ah-addr" itemprop="name">11023 Fruitland Drive, Unit 401</h3>
-          <p class="ah-city">Studio City, CA 91604</p>
-          <div class="ah-meta">
-            <span><strong>3</strong> BD</span>
-            <span><strong>3</strong> BA</span>
-            <span><strong>1,705</strong> SF</span>
-          </div>
-          <div class="ah-price" itemprop="price">$1,150,000</div>
-          <span class="ah-cta">View listing →</span>
-        </div>
-      </a>
-    </article>
+    <article class="active-hero f" itemscope itemtype="https://schema.org/RealEstateListing"><a href="/properties/fruitland-401/" class="active-hero-link"><div class="active-hero-img" style="background-image:url('https://www.compass.com/m/5eb8ebcc9941d8fae8de516f5984c4b9c0e81fac_img_0_c5e5b/750x500.jpg')"><span class="ah-badge">Active Under Contract</span></div><div class="active-hero-body"><p class="ah-eyebrow">Now Representing</p><h3 class="ah-addr" itemprop="name">11023 Fruitland Drive, Unit 401</h3><p class="ah-city">Studio City, CA 91604</p><div class="ah-meta"><span><strong>3</strong> BD</span><span><strong>3</strong> BA</span><span><strong>1,705</strong> SF</span></div><div class="ah-price" itemprop="price">$1,150,000</div><span class="ah-cta">View listing →</span></div></a></article>
   </div>
 </section>
 
-<!-- FEATURED PAST SALE -->
 <section class="featured-section">
-  <div class="featured-inner">
-    
-    <div class="featured-sale f">
-      <div class="fs-img" style="background-image:url('https://www.compass.com/m/f8d3dd4600ce4315088a45b817ae1a65ce2a1a13_img_0_83d15/750x500.jpg')"><span class="fs-badge">Sold · Record Price</span></div>
-      <div class="fs-text">
-        <p class="fs-eyebrow">Featured Closing</p>
-        <h3 class="fs-addr">3904 East Boulevard</h3>
-        <p class="fs-city">Los Angeles, CA 90066</p>
-        <div class="fs-price">$2,325,000</div>
-        <div class="fs-meta">
-          <span><strong>4</strong> Bedrooms</span><span class="fs-dot">·</span>
-          <span><strong>1</strong> Bathrooms</span><span class="fs-dot">·</span>
-          <span><strong>2,033</strong> SqFt</span>
-        </div>
-        <p class="fs-quote">"Our highest-value closing — delivered with precision marketing and a private-market strategy."</p>
-        <a href="/contact/" class="btn btn-gold">Discuss your sale</a>
-      </div>
-    </div>
-  </div>
+  <div class="featured-inner"><div class="featured-sale f"><div class="fs-img" style="background-image:url('https://www.compass.com/m/f8d3dd4600ce4315088a45b817ae1a65ce2a1a13_img_0_83d15/750x500.jpg')"><span class="fs-badge">Sold · Record Price</span></div><div class="fs-text"><p class="fs-eyebrow">Featured Closing</p><h3 class="fs-addr">3904 East Boulevard</h3><p class="fs-city">Los Angeles, CA 90066</p><div class="fs-price">$2,325,000</div><div class="fs-meta"><span><strong>4</strong> Bedrooms</span><span class="fs-dot">·</span><span><strong>1</strong> Bathrooms</span><span class="fs-dot">·</span><span><strong>2,033</strong> SqFt</span></div><p class="fs-quote">"Our highest-value closing — delivered with precision marketing and a private-market strategy."</p><a href="/contact/" class="btn btn-gold">Discuss your sale</a></div></div></div>
 </section>
 
-<!-- PAST SALES GRID -->
 <section class="sales-section" id="sold">
   <div class="sales-inner">
     <div class="sales-head">
@@ -441,244 +225,10 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
       <h2 class="section-h">Past <em>sales.</em></h2>
       <p class="section-sub">Single-family homes, condos, and investment properties closed on behalf of AMRE buyers and sellers.</p>
     </div>
-    <div class="sales-grid">
-      
-    <article class="sale-card f " itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('https://www.compass.com/m/42241c1c0a27fe8f1042cb2550791fbcadb6989d_img_0_71681/750x500.jpg')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$2,191,000</div>
-          <div class="sale-addr">1415 Sunset Avenue</div>
-          <div class="sale-city">Santa Monica, CA 90405</div>
-          <div class="sale-specs"><span>2 BD</span><span>1 BA</span><span>1,062 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f d1" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('https://www.compass.com/m/c84f3270d2a2de10d0882fb45797990701df2b7e_img_0_76787/750x500.jpg')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$1,721,000</div>
-          <div class="sale-addr">14423 Mulholland Drive</div>
-          <div class="sale-city">Los Angeles, CA 90077</div>
-          <div class="sale-specs"><span>3 BD</span><span>2 BA</span><span>1,622 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f d2" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('https://www.compass.com/m/a4bfa207077c2a522c9e8100fb3c9f2d41b197ab_img_0_6ab05/750x500.jpg')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$1,650,000</div>
-          <div class="sale-addr">4701 Deseret Drive</div>
-          <div class="sale-city">Woodland Hills, CA 91364</div>
-          <div class="sale-specs"><span>3 BD</span><span>3 BA</span><span>2,630 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f d3" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('https://www.compass.com/m/391baf349e44bfe5505a1c620293c45acb0069da_img_0/750x500.jpg')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$1,550,000</div>
-          <div class="sale-addr">4265 Don Luis Drive</div>
-          <div class="sale-city">Los Angeles, CA 90008</div>
-          <div class="sale-specs"><span>3 BD</span><span>2 BA</span><span>1,647 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f " itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('https://www.compass.com/m/adc08ea8c351856cfbf83163b19d65e9544198f2_img_0/750x500.jpg')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$1,510,000</div>
-          <div class="sale-addr">124 Convoy Street</div>
-          <div class="sale-city">Playa del Rey, CA 90293</div>
-          <div class="sale-specs"><span>2 BD</span><span>3 BA</span><span>2,116 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f d1" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('https://www.compass.com/m/00d8980b0342682119fd82d90631f21d7c34c14c_img_0/750x500.jpg')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$1,375,000</div>
-          <div class="sale-addr">4265 Don Luis Drive</div>
-          <div class="sale-city">Los Angeles, CA 90008</div>
-          <div class="sale-specs"><span>3 BD</span><span>2 BA</span><span>1,647 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f d2" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('https://www.compass.com/m/80ca82898d212e6528cbe5581423d5908062dde3_img_0_19d6b/750x500.jpg')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$1,349,000</div>
-          <div class="sale-addr">13236 Fiji Way, Unit D</div>
-          <div class="sale-city">Marina del Rey, CA 90292</div>
-          <div class="sale-specs"><span>3 BD</span><span>3 BA</span><span>1,763 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f d3" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('https://www.compass.com/m/088a366b2d415dbb7028ac87e02e69675bfcc78f_img_0/750x500.jpg')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$1,295,000</div>
-          <div class="sale-addr">22416 Needles Street</div>
-          <div class="sale-city">Chatsworth, CA 91311</div>
-          <div class="sale-specs"><span>3 BD</span><span>3 BA</span><span>2,651 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f " itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('https://www.compass.com/m/863213cb3939bcd54720e3062d7cde7e3c9f3d46_img_0_11bf7/750x500.jpg')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$1,270,000</div>
-          <div class="sale-addr">2239 Brier Avenue</div>
-          <div class="sale-city">Los Angeles, CA 90039</div>
-          <div class="sale-specs"><span>3 BD</span><span>2 BA</span><span>1,263 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f d1" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('https://www.compass.com/m/956dd08ed7a290cebca6c1a0526d84147331d049_img_0_3b12f/750x500.jpg')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$1,232,100</div>
-          <div class="sale-addr">22702 White Fir Lane</div>
-          <div class="sale-city">Diamond Bar, CA 91765</div>
-          <div class="sale-specs"><span>5 BD</span><span>3 BA</span><span>2,447 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f d2" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('https://www.compass.com/m3/89f73e302df070394fdd399f3139e869108248be/750x500.jpg')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$1,150,000</div>
-          <div class="sale-addr">1345 West 35th Street</div>
-          <div class="sale-city">San Pedro, CA 90731</div>
-          <div class="sale-specs"><span>4 BD</span><span>2 BA</span><span>1,853 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f d3" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('https://www.compass.com/m/31e63baa69201fd63ace44460f138855912ca0a3_img_0/750x500.jpg')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$1,070,000</div>
-          <div class="sale-addr">235 South Tower Drive, Unit 305</div>
-          <div class="sale-city">Beverly Hills, CA 90211</div>
-          <div class="sale-specs"><span>2 BD</span><span>2 BA</span><span>1,516 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f " itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('https://www.compass.com/m/fa15b5a365ccf128f6b6e9fff66d077129499e69_img_0_84346/750x500.jpg')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$1,010,000</div>
-          <div class="sale-addr">2640 Bronson Avenue</div>
-          <div class="sale-city">Los Angeles, CA 90018</div>
-          <div class="sale-specs"><span>4 BD</span><span>4 BA</span><span>2,518 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f d1" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('https://www.compass.com/m/97a68f49437c88492285fefe391b8faffb4e7a92_img_0/750x500.jpg')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$1,000,000</div>
-          <div class="sale-addr">4080 Glencoe Avenue, Unit 326</div>
-          <div class="sale-city">Marina del Rey, CA 90292</div>
-          <div class="sale-specs"><span>2 BD</span><span>2 BA</span><span>1,235 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f d2" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$825,000</div>
-          <div class="sale-addr">1154 South Barrington Avenue, Unit 306</div>
-          <div class="sale-city">Los Angeles, CA 90049</div>
-          <div class="sale-specs"><span>2 BD</span><span>2 BA</span><span>900 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f d3" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$802,000</div>
-          <div class="sale-addr">78 New Season</div>
-          <div class="sale-city">Irvine, CA 92602</div>
-          <div class="sale-specs"><span>3 BD</span><span>3 BA</span><span>1,346 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f " itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('https://www.compass.com/m/f89ac3b53ab1296a54659e8912985b83f7c2c901_img_0/750x500.jpg')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$793,769</div>
-          <div class="sale-addr">1240 South Corning Street, Unit 203</div>
-          <div class="sale-city">Los Angeles, CA 90035</div>
-          <div class="sale-specs"><span>2 BD</span><span>2 BA</span><span>1,312 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f d1" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('https://www.compass.com/m/8a1bdc96940b4b0bef095ae0390d2dd5a16a25d6_img_0_f16cf/750x500.jpg')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$790,000</div>
-          <div class="sale-addr">8500 Falmouth Avenue, Unit 1110</div>
-          <div class="sale-city">Playa del Rey, CA 90293</div>
-          <div class="sale-specs"><span>2 BD</span><span>3 BA</span><span>1,116 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f d2" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('https://www.compass.com/m/be60174d355aa8cff29d86e77e6cf73f1604d39d_img_0/750x500.jpg')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$751,000</div>
-          <div class="sale-addr">1084 Sycamore Drive</div>
-          <div class="sale-city">Simi Valley, CA 93065</div>
-          <div class="sale-specs"><span>4 BD</span><span>2 BA</span><span>1,580 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f d3" itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('https://www.compass.com/m/eb8ba86d1a9cd455473493246c66919aa232fdd3_img_0_574de/750x500.jpg')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$650,000</div>
-          <div class="sale-addr">6324 Keniston Avenue</div>
-          <div class="sale-city">Los Angeles, CA 90043</div>
-          <div class="sale-specs"><span>2 BD</span><span>1 BA</span><span>871 SF</span></div>
-        </div>
-      </a>
-    </article>
-    <article class="sale-card f " itemscope itemtype="https://schema.org/RealEstateListing">
-      <a href="/contact/">
-        <div class="sale-img" style="background-image:url('')"><span class="sale-badge">Sold</span></div>
-        <div class="sale-body">
-          <div class="sale-price">$320,000</div>
-          <div class="sale-addr">61750 Desert Air Road</div>
-          <div class="sale-city">Joshua Tree, CA 92252</div>
-          <div class="sale-specs"><span>3 BD</span><span>2 BA</span><span>1,158 SF</span></div>
-        </div>
-      </a>
-    </article>
-    </div>
+    <div class="sales-grid"><article class="sale-card f " itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('https://www.compass.com/m/42241c1c0a27fe8f1042cb2550791fbcadb6989d_img_0_71681/750x500.jpg')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$2,191,000</div><div class="sale-addr">1415 Sunset Avenue</div><div class="sale-city">Santa Monica, CA 90405</div><div class="sale-specs"><span>2 BD</span><span>1 BA</span><span>1,062 SF</span></div></div></a></article><article class="sale-card f d1" itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('https://www.compass.com/m/c84f3270d2a2de10d0882fb45797990701df2b7e_img_0_76787/750x500.jpg')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$1,721,000</div><div class="sale-addr">14423 Mulholland Drive</div><div class="sale-city">Los Angeles, CA 90077</div><div class="sale-specs"><span>3 BD</span><span>2 BA</span><span>1,622 SF</span></div></div></a></article><article class="sale-card f d2" itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('https://www.compass.com/m/a4bfa207077c2a522c9e8100fb3c9f2d41b197ab_img_0_6ab05/750x500.jpg')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$1,650,000</div><div class="sale-addr">4701 Deseret Drive</div><div class="sale-city">Woodland Hills, CA 91364</div><div class="sale-specs"><span>3 BD</span><span>3 BA</span><span>2,630 SF</span></div></div></a></article><article class="sale-card f d3" itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('https://www.compass.com/m/391baf349e44bfe5505a1c620293c45acb0069da_img_0/750x500.jpg')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$1,550,000</div><div class="sale-addr">4265 Don Luis Drive</div><div class="sale-city">Los Angeles, CA 90008</div><div class="sale-specs"><span>3 BD</span><span>2 BA</span><span>1,647 SF</span></div></div></a></article><article class="sale-card f " itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('https://www.compass.com/m/adc08ea8c351856cfbf83163b19d65e9544198f2_img_0/750x500.jpg')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$1,510,000</div><div class="sale-addr">124 Convoy Street</div><div class="sale-city">Playa del Rey, CA 90293</div><div class="sale-specs"><span>2 BD</span><span>3 BA</span><span>2,116 SF</span></div></div></a></article><article class="sale-card f d1" itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('https://www.compass.com/m/00d8980b0342682119fd82d90631f21d7c34c14c_img_0/750x500.jpg')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$1,375,000</div><div class="sale-addr">4265 Don Luis Drive</div><div class="sale-city">Los Angeles, CA 90008</div><div class="sale-specs"><span>3 BD</span><span>2 BA</span><span>1,647 SF</span></div></div></a></article><article class="sale-card f d2" itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('https://www.compass.com/m/80ca82898d212e6528cbe5581423d5908062dde3_img_0_19d6b/750x500.jpg')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$1,349,000</div><div class="sale-addr">13236 Fiji Way, Unit D</div><div class="sale-city">Marina del Rey, CA 90292</div><div class="sale-specs"><span>3 BD</span><span>3 BA</span><span>1,763 SF</span></div></div></a></article><article class="sale-card f d3" itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('https://www.compass.com/m/088a366b2d415dbb7028ac87e02e69675bfcc78f_img_0/750x500.jpg')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$1,295,000</div><div class="sale-addr">22416 Needles Street</div><div class="sale-city">Chatsworth, CA 91311</div><div class="sale-specs"><span>3 BD</span><span>3 BA</span><span>2,651 SF</span></div></div></a></article><article class="sale-card f " itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('https://www.compass.com/m/863213cb3939bcd54720e3062d7cde7e3c9f3d46_img_0_11bf7/750x500.jpg')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$1,270,000</div><div class="sale-addr">2239 Brier Avenue</div><div class="sale-city">Los Angeles, CA 90039</div><div class="sale-specs"><span>3 BD</span><span>2 BA</span><span>1,263 SF</span></div></div></a></article><article class="sale-card f d1" itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('https://www.compass.com/m/956dd08ed7a290cebca6c1a0526d84147331d049_img_0_3b12f/750x500.jpg')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$1,232,100</div><div class="sale-addr">22702 White Fir Lane</div><div class="sale-city">Diamond Bar, CA 91765</div><div class="sale-specs"><span>5 BD</span><span>3 BA</span><span>2,447 SF</span></div></div></a></article><article class="sale-card f d2" itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('https://www.compass.com/m3/89f73e302df070394fdd399f3139e869108248be/750x500.jpg')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$1,150,000</div><div class="sale-addr">1345 West 35th Street</div><div class="sale-city">San Pedro, CA 90731</div><div class="sale-specs"><span>4 BD</span><span>2 BA</span><span>1,853 SF</span></div></div></a></article><article class="sale-card f d3" itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('https://www.compass.com/m/31e63baa69201fd63ace44460f138855912ca0a3_img_0/750x500.jpg')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$1,070,000</div><div class="sale-addr">235 South Tower Drive, Unit 305</div><div class="sale-city">Beverly Hills, CA 90211</div><div class="sale-specs"><span>2 BD</span><span>2 BA</span><span>1,516 SF</span></div></div></a></article><article class="sale-card f " itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('https://www.compass.com/m/fa15b5a365ccf128f6b6e9fff66d077129499e69_img_0_84346/750x500.jpg')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$1,010,000</div><div class="sale-addr">2640 Bronson Avenue</div><div class="sale-city">Los Angeles, CA 90018</div><div class="sale-specs"><span>4 BD</span><span>4 BA</span><span>2,518 SF</span></div></div></a></article><article class="sale-card f d1" itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('https://www.compass.com/m/97a68f49437c88492285fefe391b8faffb4e7a92_img_0/750x500.jpg')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$1,000,000</div><div class="sale-addr">4080 Glencoe Avenue, Unit 326</div><div class="sale-city">Marina del Rey, CA 90292</div><div class="sale-specs"><span>2 BD</span><span>2 BA</span><span>1,235 SF</span></div></div></a></article><article class="sale-card f d2" itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$825,000</div><div class="sale-addr">1154 South Barrington Avenue, Unit 306</div><div class="sale-city">Los Angeles, CA 90049</div><div class="sale-specs"><span>2 BD</span><span>2 BA</span><span>900 SF</span></div></div></a></article><article class="sale-card f d3" itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$802,000</div><div class="sale-addr">78 New Season</div><div class="sale-city">Irvine, CA 92602</div><div class="sale-specs"><span>3 BD</span><span>3 BA</span><span>1,346 SF</span></div></div></a></article><article class="sale-card f " itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('https://www.compass.com/m/f89ac3b53ab1296a54659e8912985b83f7c2c901_img_0/750x500.jpg')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$793,769</div><div class="sale-addr">1240 South Corning Street, Unit 203</div><div class="sale-city">Los Angeles, CA 90035</div><div class="sale-specs"><span>2 BD</span><span>2 BA</span><span>1,312 SF</span></div></div></a></article><article class="sale-card f d1" itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('https://www.compass.com/m/8a1bdc96940b4b0bef095ae0390d2dd5a16a25d6_img_0_f16cf/750x500.jpg')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$790,000</div><div class="sale-addr">8500 Falmouth Avenue, Unit 1110</div><div class="sale-city">Playa del Rey, CA 90293</div><div class="sale-specs"><span>2 BD</span><span>3 BA</span><span>1,116 SF</span></div></div></a></article><article class="sale-card f d2" itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('https://www.compass.com/m/be60174d355aa8cff29d86e77e6cf73f1604d39d_img_0/750x500.jpg')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$751,000</div><div class="sale-addr">1084 Sycamore Drive</div><div class="sale-city">Simi Valley, CA 93065</div><div class="sale-specs"><span>4 BD</span><span>2 BA</span><span>1,580 SF</span></div></div></a></article><article class="sale-card f d3" itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('https://www.compass.com/m/eb8ba86d1a9cd455473493246c66919aa232fdd3_img_0_574de/750x500.jpg')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$650,000</div><div class="sale-addr">6324 Keniston Avenue</div><div class="sale-city">Los Angeles, CA 90043</div><div class="sale-specs"><span>2 BD</span><span>1 BA</span><span>871 SF</span></div></div></a></article><article class="sale-card f " itemscope itemtype="https://schema.org/RealEstateListing"><a href="/contact/"><div class="sale-img" style="background-image:url('')"><span class="sale-badge">Sold</span></div><div class="sale-body"><div class="sale-price">$320,000</div><div class="sale-addr">61750 Desert Air Road</div><div class="sale-city">Joshua Tree, CA 92252</div><div class="sale-specs"><span>3 BD</span><span>2 BA</span><span>1,158 SF</span></div></div></a></article></div>
   </div>
 </section>
 
-<!-- PAST LEASES LIST -->
 <section class="leases-section" id="leased">
   <div class="leases-inner">
     <div class="leases-head">
@@ -686,238 +236,10 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
       <h2 class="section-h section-h-white">Past <em>leases.</em></h2>
       <p class="section-sub section-sub-white">Long-term leases secured for landlords and tenants across the Westside, San Fernando Valley, and greater LA.</p>
     </div>
-    <div class="leases-list">
-      
-    <article class="lease-row f ">
-      <a href="/contact/" class="lease-row-link">
-        <div class="lr-img" style="background-image:url('https://www.compass.com/m/f4e8cf4f77d5f92f7642e7dd4b0c77f727d04a12_img_0_983ce/750x500.jpg')"></div>
-        <div class="lr-info">
-          <div class="lr-addr">653 N Swarthmore Avenue</div>
-          <div class="lr-city">Pacific Palisades, CA 90272</div>
-        </div>
-        <div class="lr-specs">
-          <span><strong>3</strong> bd</span>
-          <span><strong>2</strong> ba</span>
-          <span><strong>2,454</strong> sf</span>
-        </div>
-        <div class="lr-price">$8,500/mo<span class="lr-leased">Leased</span></div>
-      </a>
-    </article>
-    <article class="lease-row f d1">
-      <a href="/contact/" class="lease-row-link">
-        <div class="lr-img" style="background-image:url('https://www.compass.com/m/90691cf23dddfcf2f5b1384e212204c24906585a_img_0_f4d2f/750x500.jpg')"></div>
-        <div class="lr-info">
-          <div class="lr-addr">7447 West 81st Street</div>
-          <div class="lr-city">Los Angeles, CA 90045</div>
-        </div>
-        <div class="lr-specs">
-          <span><strong>4</strong> bd</span>
-          <span><strong>5</strong> ba</span>
-          <span><strong>2,200</strong> sf</span>
-        </div>
-        <div class="lr-price">$7,750/mo<span class="lr-leased">Leased</span></div>
-      </a>
-    </article>
-    <article class="lease-row f d2">
-      <a href="/contact/" class="lease-row-link">
-        <div class="lr-img" style="background-image:url('https://www.compass.com/m/50e4b1c76860e7d160613fca0dc7125a55959f80_img_0_8e7a5/750x500.jpg')"></div>
-        <div class="lr-info">
-          <div class="lr-addr">5602 West 78th Street, Unit 5602</div>
-          <div class="lr-city">Los Angeles, CA 90045</div>
-        </div>
-        <div class="lr-specs">
-          <span><strong>4</strong> bd</span>
-          <span><strong>3</strong> ba</span>
-          <span><strong>1,962</strong> sf</span>
-        </div>
-        <div class="lr-price">$7,495/mo<span class="lr-leased">Leased</span></div>
-      </a>
-    </article>
-    <article class="lease-row f d3">
-      <a href="/contact/" class="lease-row-link">
-        <div class="lr-img" style="background-image:url('https://www.compass.com/m/3361d68e1a21cc9061ae4f9c41700a79550ff415_img_0_9dc7c/750x500.jpg')"></div>
-        <div class="lr-info">
-          <div class="lr-addr">12753 Appleton Way</div>
-          <div class="lr-city">Los Angeles, CA 90066</div>
-        </div>
-        <div class="lr-specs">
-          <span><strong>3</strong> bd</span>
-          <span><strong>2</strong> ba</span>
-          <span><strong>1,164</strong> sf</span>
-        </div>
-        <div class="lr-price">$6,900/mo<span class="lr-leased">Leased</span></div>
-      </a>
-    </article>
-    <article class="lease-row f ">
-      <a href="/contact/" class="lease-row-link">
-        <div class="lr-img" style="background-image:url('https://www.compass.com/m/652efde41cca9dcf19b3a508ab6b1fbb8b77e3d1_img_0/750x500.jpg')"></div>
-        <div class="lr-info">
-          <div class="lr-addr">4518 Alla Road</div>
-          <div class="lr-city">Los Angeles, CA 90066</div>
-        </div>
-        <div class="lr-specs">
-          <span><strong>3</strong> bd</span>
-          <span><strong>2</strong> ba</span>
-          <span><strong>1,550</strong> sf</span>
-        </div>
-        <div class="lr-price">$6,100/mo<span class="lr-leased">Leased</span></div>
-      </a>
-    </article>
-    <article class="lease-row f d1">
-      <a href="/contact/" class="lease-row-link">
-        <div class="lr-img" style="background-image:url('https://www.compass.com/m/eda73e8891c6d4ea786b9de5c2964e1f17325703_img_0_2eb8b/750x500.jpg')"></div>
-        <div class="lr-info">
-          <div class="lr-addr">2010 Glendon Avenue</div>
-          <div class="lr-city">Los Angeles, CA 90025</div>
-        </div>
-        <div class="lr-specs">
-          <span><strong>2</strong> bd</span>
-          <span><strong>1</strong> ba</span>
-          <span><strong>765</strong> sf</span>
-        </div>
-        <div class="lr-price">$5,300/mo<span class="lr-leased">Leased</span></div>
-      </a>
-    </article>
-    <article class="lease-row f d2">
-      <a href="/contact/" class="lease-row-link">
-        <div class="lr-img" style="background-image:url('https://www.compass.com/m/83b7c31fa19102080455c7b6c5290437e9148f30_img_0_a62cd/750x500.jpg')"></div>
-        <div class="lr-info">
-          <div class="lr-addr">932 S Plymouth Boulevard</div>
-          <div class="lr-city">Los Angeles, CA 90019</div>
-        </div>
-        <div class="lr-specs">
-          <span><strong>3</strong> bd</span>
-          <span><strong>3</strong> ba</span>
-          <span><strong>2,023</strong> sf</span>
-        </div>
-        <div class="lr-price">$4,900/mo<span class="lr-leased">Leased</span></div>
-      </a>
-    </article>
-    <article class="lease-row f d3">
-      <a href="/contact/" class="lease-row-link">
-        <div class="lr-img" style="background-image:url('https://www.compass.com/m/ad0629f83d4bc6632d8cea8abdca6d986ad71a36_img_0_ee0d4/750x500.jpg')"></div>
-        <div class="lr-info">
-          <div class="lr-addr">1114 Yale Drive</div>
-          <div class="lr-city">Glendale, CA 91205</div>
-        </div>
-        <div class="lr-specs">
-          <span><strong>2</strong> bd</span>
-          <span><strong>1</strong> ba</span>
-          <span><strong>1,100</strong> sf</span>
-        </div>
-        <div class="lr-price">$4,895/mo<span class="lr-leased">Leased</span></div>
-      </a>
-    </article>
-    <article class="lease-row f ">
-      <a href="/contact/" class="lease-row-link">
-        <div class="lr-img" style="background-image:url('https://www.compass.com/m/a94c1ba6519465b05b883a3c0168d5b7c0663fc0_img_0_fbdc2/750x500.jpg')"></div>
-        <div class="lr-info">
-          <div class="lr-addr">11029 Sarah Street</div>
-          <div class="lr-city">Los Angeles, CA 91602</div>
-        </div>
-        <div class="lr-specs">
-          <span><strong>2</strong> bd</span>
-          <span><strong>1</strong> ba</span>
-          <span><strong>1,106</strong> sf</span>
-        </div>
-        <div class="lr-price">$3,800/mo<span class="lr-leased">Leased</span></div>
-      </a>
-    </article>
-    <article class="lease-row f d1">
-      <a href="/contact/" class="lease-row-link">
-        <div class="lr-img" style="background-image:url('')"></div>
-        <div class="lr-info">
-          <div class="lr-addr">11029 Sarah Street</div>
-          <div class="lr-city">North Hollywood, CA 91602</div>
-        </div>
-        <div class="lr-specs">
-          <span><strong>2</strong> bd</span>
-          <span><strong>1</strong> ba</span>
-          <span><strong>1,106</strong> sf</span>
-        </div>
-        <div class="lr-price">$3,500/mo<span class="lr-leased">Leased</span></div>
-      </a>
-    </article>
-    <article class="lease-row f d2">
-      <a href="/contact/" class="lease-row-link">
-        <div class="lr-img" style="background-image:url('https://www.compass.com/m/e12cc0b51081256e3ff7622de6b66fd6d777ab72_img_0_6c7a5/750x500.jpg')"></div>
-        <div class="lr-info">
-          <div class="lr-addr">730 S Marengo Avenue, Unit 8</div>
-          <div class="lr-city">Pasadena, CA 91106</div>
-        </div>
-        <div class="lr-specs">
-          <span><strong>2</strong> bd</span>
-          <span><strong>2</strong> ba</span>
-          <span><strong>1,583</strong> sf</span>
-        </div>
-        <div class="lr-price">$3,300/mo<span class="lr-leased">Leased</span></div>
-      </a>
-    </article>
-    <article class="lease-row f d3">
-      <a href="/contact/" class="lease-row-link">
-        <div class="lr-img" style="background-image:url('https://www.compass.com/m/e66a45942f3be785446ef9746cdb5d4a5a7057ca_img_0/750x500.jpg')"></div>
-        <div class="lr-info">
-          <div class="lr-addr">11029 Sarah Street</div>
-          <div class="lr-city">North Hollywood, CA 91602</div>
-        </div>
-        <div class="lr-specs">
-          <span><strong>2</strong> bd</span>
-          <span><strong>1</strong> ba</span>
-          <span><strong>1,106</strong> sf</span>
-        </div>
-        <div class="lr-price">$3,200/mo<span class="lr-leased">Leased</span></div>
-      </a>
-    </article>
-    <article class="lease-row f ">
-      <a href="/contact/" class="lease-row-link">
-        <div class="lr-img" style="background-image:url('https://www.compass.com/m/6f754ac1e477ab746e5dddbb62374ccf46972c14_img_0_23735/750x500.jpg')"></div>
-        <div class="lr-info">
-          <div class="lr-addr">1282 Queen Anne Place, Unit 2</div>
-          <div class="lr-city">Los Angeles, CA 90019</div>
-        </div>
-        <div class="lr-specs">
-          <span><strong>1</strong> bd</span>
-          <span><strong>1</strong> ba</span>
-          <span><strong>850</strong> sf</span>
-        </div>
-        <div class="lr-price">$1,850/mo<span class="lr-leased">Leased</span></div>
-      </a>
-    </article>
-    <article class="lease-row f d1">
-      <a href="/contact/" class="lease-row-link">
-        <div class="lr-img" style="background-image:url('https://www.compass.com/m/5fc716bbbd184df5444701221e496dab1e24c3a8_img_0_775bf/750x500.jpg')"></div>
-        <div class="lr-info">
-          <div class="lr-addr">1282 Queen Anne Place, Unit 3</div>
-          <div class="lr-city">Los Angeles, CA 90019</div>
-        </div>
-        <div class="lr-specs">
-          <span><strong>1</strong> bd</span>
-          <span><strong>1</strong> ba</span>
-          <span><strong>850</strong> sf</span>
-        </div>
-        <div class="lr-price">$1,795/mo<span class="lr-leased">Leased</span></div>
-      </a>
-    </article>
-    <article class="lease-row f d2">
-      <a href="/contact/" class="lease-row-link">
-        <div class="lr-img" style="background-image:url('https://www.compass.com/m/ab527f733f6989f001b40ad613933683d4d00522_img_0_e2a4b/750x500.jpg')"></div>
-        <div class="lr-info">
-          <div class="lr-addr">1282 Queen Anne Place, Unit 1</div>
-          <div class="lr-city">Los Angeles, CA 90019</div>
-        </div>
-        <div class="lr-specs">
-          <span><strong>1</strong> bd</span>
-          <span><strong>1</strong> ba</span>
-          <span><strong>850</strong> sf</span>
-        </div>
-        <div class="lr-price">$1,750/mo<span class="lr-leased">Leased</span></div>
-      </a>
-    </article>
-    </div>
+    <div class="leases-list"><article class="lease-row f "><a href="/contact/" class="lease-row-link"><div class="lr-img" style="background-image:url('https://www.compass.com/m/f4e8cf4f77d5f92f7642e7dd4b0c77f727d04a12_img_0_983ce/750x500.jpg')"></div><div class="lr-info"><div class="lr-addr">653 N Swarthmore Avenue</div><div class="lr-city">Pacific Palisades, CA 90272</div></div><div class="lr-specs"><span><strong>3</strong> bd</span><span><strong>2</strong> ba</span><span><strong>2,454</strong> sf</span></div><div class="lr-price">$8,500/mo<span class="lr-leased">Leased</span></div></a></article><article class="lease-row f d1"><a href="/contact/" class="lease-row-link"><div class="lr-img" style="background-image:url('https://www.compass.com/m/90691cf23dddfcf2f5b1384e212204c24906585a_img_0_f4d2f/750x500.jpg')"></div><div class="lr-info"><div class="lr-addr">7447 West 81st Street</div><div class="lr-city">Los Angeles, CA 90045</div></div><div class="lr-specs"><span><strong>4</strong> bd</span><span><strong>5</strong> ba</span><span><strong>2,200</strong> sf</span></div><div class="lr-price">$7,750/mo<span class="lr-leased">Leased</span></div></a></article><article class="lease-row f d2"><a href="/contact/" class="lease-row-link"><div class="lr-img" style="background-image:url('https://www.compass.com/m/50e4b1c76860e7d160613fca0dc7125a55959f80_img_0_8e7a5/750x500.jpg')"></div><div class="lr-info"><div class="lr-addr">5602 West 78th Street, Unit 5602</div><div class="lr-city">Los Angeles, CA 90045</div></div><div class="lr-specs"><span><strong>4</strong> bd</span><span><strong>3</strong> ba</span><span><strong>1,962</strong> sf</span></div><div class="lr-price">$7,495/mo<span class="lr-leased">Leased</span></div></a></article><article class="lease-row f d3"><a href="/contact/" class="lease-row-link"><div class="lr-img" style="background-image:url('https://www.compass.com/m/3361d68e1a21cc9061ae4f9c41700a79550ff415_img_0_9dc7c/750x500.jpg')"></div><div class="lr-info"><div class="lr-addr">12753 Appleton Way</div><div class="lr-city">Los Angeles, CA 90066</div></div><div class="lr-specs"><span><strong>3</strong> bd</span><span><strong>2</strong> ba</span><span><strong>1,164</strong> sf</span></div><div class="lr-price">$6,900/mo<span class="lr-leased">Leased</span></div></a></article><article class="lease-row f "><a href="/contact/" class="lease-row-link"><div class="lr-img" style="background-image:url('https://www.compass.com/m/652efde41cca9dcf19b3a508ab6b1fbb8b77e3d1_img_0/750x500.jpg')"></div><div class="lr-info"><div class="lr-addr">4518 Alla Road</div><div class="lr-city">Los Angeles, CA 90066</div></div><div class="lr-specs"><span><strong>3</strong> bd</span><span><strong>2</strong> ba</span><span><strong>1,550</strong> sf</span></div><div class="lr-price">$6,100/mo<span class="lr-leased">Leased</span></div></a></article><article class="lease-row f d1"><a href="/contact/" class="lease-row-link"><div class="lr-img" style="background-image:url('https://www.compass.com/m/eda73e8891c6d4ea786b9de5c2964e1f17325703_img_0_2eb8b/750x500.jpg')"></div><div class="lr-info"><div class="lr-addr">2010 Glendon Avenue</div><div class="lr-city">Los Angeles, CA 90025</div></div><div class="lr-specs"><span><strong>2</strong> bd</span><span><strong>1</strong> ba</span><span><strong>765</strong> sf</span></div><div class="lr-price">$5,300/mo<span class="lr-leased">Leased</span></div></a></article><article class="lease-row f d2"><a href="/contact/" class="lease-row-link"><div class="lr-img" style="background-image:url('https://www.compass.com/m/83b7c31fa19102080455c7b6c5290437e9148f30_img_0_a62cd/750x500.jpg')"></div><div class="lr-info"><div class="lr-addr">932 S Plymouth Boulevard</div><div class="lr-city">Los Angeles, CA 90019</div></div><div class="lr-specs"><span><strong>3</strong> bd</span><span><strong>3</strong> ba</span><span><strong>2,023</strong> sf</span></div><div class="lr-price">$4,900/mo<span class="lr-leased">Leased</span></div></a></article><article class="lease-row f d3"><a href="/contact/" class="lease-row-link"><div class="lr-img" style="background-image:url('https://www.compass.com/m/ad0629f83d4bc6632d8cea8abdca6d986ad71a36_img_0_ee0d4/750x500.jpg')"></div><div class="lr-info"><div class="lr-addr">1114 Yale Drive</div><div class="lr-city">Glendale, CA 91205</div></div><div class="lr-specs"><span><strong>2</strong> bd</span><span><strong>1</strong> ba</span><span><strong>1,100</strong> sf</span></div><div class="lr-price">$4,895/mo<span class="lr-leased">Leased</span></div></a></article><article class="lease-row f "><a href="/contact/" class="lease-row-link"><div class="lr-img" style="background-image:url('https://www.compass.com/m/a94c1ba6519465b05b883a3c0168d5b7c0663fc0_img_0_fbdc2/750x500.jpg')"></div><div class="lr-info"><div class="lr-addr">11029 Sarah Street</div><div class="lr-city">Los Angeles, CA 91602</div></div><div class="lr-specs"><span><strong>2</strong> bd</span><span><strong>1</strong> ba</span><span><strong>1,106</strong> sf</span></div><div class="lr-price">$3,800/mo<span class="lr-leased">Leased</span></div></a></article><article class="lease-row f d1"><a href="/contact/" class="lease-row-link"><div class="lr-img" style="background-image:url('')"></div><div class="lr-info"><div class="lr-addr">11029 Sarah Street</div><div class="lr-city">North Hollywood, CA 91602</div></div><div class="lr-specs"><span><strong>2</strong> bd</span><span><strong>1</strong> ba</span><span><strong>1,106</strong> sf</span></div><div class="lr-price">$3,500/mo<span class="lr-leased">Leased</span></div></a></article><article class="lease-row f d2"><a href="/contact/" class="lease-row-link"><div class="lr-img" style="background-image:url('https://www.compass.com/m/e12cc0b51081256e3ff7622de6b66fd6d777ab72_img_0_6c7a5/750x500.jpg')"></div><div class="lr-info"><div class="lr-addr">730 S Marengo Avenue, Unit 8</div><div class="lr-city">Pasadena, CA 91106</div></div><div class="lr-specs"><span><strong>2</strong> bd</span><span><strong>2</strong> ba</span><span><strong>1,583</strong> sf</span></div><div class="lr-price">$3,300/mo<span class="lr-leased">Leased</span></div></a></article><article class="lease-row f d3"><a href="/contact/" class="lease-row-link"><div class="lr-img" style="background-image:url('https://www.compass.com/m/e66a45942f3be785446ef9746cdb5d4a5a7057ca_img_0/750x500.jpg')"></div><div class="lr-info"><div class="lr-addr">11029 Sarah Street</div><div class="lr-city">North Hollywood, CA 91602</div></div><div class="lr-specs"><span><strong>2</strong> bd</span><span><strong>1</strong> ba</span><span><strong>1,106</strong> sf</span></div><div class="lr-price">$3,200/mo<span class="lr-leased">Leased</span></div></a></article><article class="lease-row f "><a href="/contact/" class="lease-row-link"><div class="lr-img" style="background-image:url('https://www.compass.com/m/6f754ac1e477ab746e5dddbb62374ccf46972c14_img_0_23735/750x500.jpg')"></div><div class="lr-info"><div class="lr-addr">1282 Queen Anne Place, Unit 2</div><div class="lr-city">Los Angeles, CA 90019</div></div><div class="lr-specs"><span><strong>1</strong> bd</span><span><strong>1</strong> ba</span><span><strong>850</strong> sf</span></div><div class="lr-price">$1,850/mo<span class="lr-leased">Leased</span></div></a></article><article class="lease-row f d1"><a href="/contact/" class="lease-row-link"><div class="lr-img" style="background-image:url('https://www.compass.com/m/5fc716bbbd184df5444701221e496dab1e24c3a8_img_0_775bf/750x500.jpg')"></div><div class="lr-info"><div class="lr-addr">1282 Queen Anne Place, Unit 3</div><div class="lr-city">Los Angeles, CA 90019</div></div><div class="lr-specs"><span><strong>1</strong> bd</span><span><strong>1</strong> ba</span><span><strong>850</strong> sf</span></div><div class="lr-price">$1,795/mo<span class="lr-leased">Leased</span></div></a></article><article class="lease-row f d2"><a href="/contact/" class="lease-row-link"><div class="lr-img" style="background-image:url('https://www.compass.com/m/ab527f733f6989f001b40ad613933683d4d00522_img_0_e2a4b/750x500.jpg')"></div><div class="lr-info"><div class="lr-addr">1282 Queen Anne Place, Unit 1</div><div class="lr-city">Los Angeles, CA 90019</div></div><div class="lr-specs"><span><strong>1</strong> bd</span><span><strong>1</strong> ba</span><span><strong>850</strong> sf</span></div><div class="lr-price">$1,750/mo<span class="lr-leased">Leased</span></div></a></article></div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-band">
   <div class="cta-inner">
     <h2>Looking for something <em>specific?</em></h2>
@@ -929,7 +251,6 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
   </div>
 </section>
 
-<!-- DISCLAIMER -->
 <div class="disclaimer">
   <p>Transaction history aggregated from public MLS and Compass records. AMRE Real Estate Group is a team of real estate agents affiliated with Compass, a real estate broker licensed by the State of California (DRE# 01991628). Information deemed reliable but not guaranteed. All measurements approximate. Equal Housing Opportunity.</p>
 </div>
